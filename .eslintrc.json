@@ -1,0 +1,64 @@
+// Linter config working jul. 17. If it breaks, ctrl + z the
+// most recent modifications to this file, and see which is
+// responsible for the malfunctioning.
+{
+  "env": {
+      "es6": true,
+      "node": true,
+      "jest": true
+  },
+  "extends": [
+      "airbnb-base",
+      "plugin:@typescript-eslint/recommended"
+  ],
+  "globals": {
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly"
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+      "ecmaVersion": 2018,
+      "sourceType": "module"
+  },
+  "plugins": [
+      "@typescript-eslint"
+  ],
+  "rules": {
+    "class-methods-use-this": "off",
+    "camelcase": "off",
+    "arrow-parens": [
+      "error",
+      "as-needed"
+    ],
+    "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "_"
+      }
+    ],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "interface",
+        "format": ["PascalCase"],
+        "custom": {
+          "regex": "^I[A-Z]",
+          "match": true
+        }
+      }
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never"
+      }
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  }
+}
